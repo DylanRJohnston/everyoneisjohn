@@ -1,0 +1,49 @@
+<template name="gamePage">
+    <div class="well">
+        <div class="page-header">
+            <h1>{{title}}</h1>
+            {{#if isGameMaster}}
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a id="check" class="btn btn-raised btn-info btn-block">Check</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a id="skilledCheck" class="btn btn-raised btn-success btn-block">Skilled Check</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a id="challange" class="btn btn-raised btn-warning btn-block">Challange</a>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+
+
+
+        <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel primary</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel success</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel warning</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+    </div>
+</template>
