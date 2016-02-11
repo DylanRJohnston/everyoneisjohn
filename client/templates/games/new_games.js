@@ -3,7 +3,10 @@ Template.newGame.onRendered(function() {
 });
 
 AutoForm.hooks({
-    insertGameForm: function() {
-        Router.go('gamePage', {_id: this.docId});
+    insertGameForm: {
+        onSuccess: function(operation, result) {
+            console.log(this);
+            Router.go('gamePage', {_id: this.docId});
+        }
     }
-})
+});
