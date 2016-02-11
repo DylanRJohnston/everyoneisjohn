@@ -3,6 +3,9 @@ Template.gamePage.onRendered(() => $.material.init());
 Template.gamePage.helpers({
     isGameMaster: function() {
         return Meteor.userId() === this.ownerId;
+    },
+    players: function() {
+        return Players.find({gameId: this._id});
     }
 });
 

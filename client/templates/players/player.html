@@ -1,0 +1,31 @@
+<template name="player">
+    <div class="panel {{playerClass}}">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                {{name}}
+                <div class="pull-right">
+                    {{#if isJohn}}
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    {{/if}}
+                    {{#if obsessions}}
+                        <span id="{{name}}-obsessions" class="obsession-popover glyphicon glyphicon-search" aria-hidden="true" data-toggle="popover"></span>
+                    {{/if}}
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            {{#each skills}}
+                <p style="display: inline;">
+                    {{skillPrefix ../name @index}}{{this}}
+                </p>
+            {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="obsessions">
+    Obsessions:
+    {{#each this}}
+        <span class="{{obsessionClass}}">{{description}}</span>
+    {{/each}}
+</template>
