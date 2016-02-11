@@ -10,7 +10,7 @@ Meteor.publish('games', function(gameId){
         return;
     }
 
-    return Games.find({_id: gameId});
+    return [Games.find({_id: gameId}), Notifications.find({gameId: gameId})];
 });
 
 Meteor.publish('allPlayers', function(gameId) {

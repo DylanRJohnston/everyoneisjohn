@@ -21,5 +21,13 @@ Template.gamePage.events({
     'click #challange': function(e, t) {
         e.preventDefault();
         Meteor.call('gameEvent', this._id, 'challange');
+Notifications.find({}).observe({
+    added(doc) {
+        MDSnackbars.show({
+            text: doc.content,
+            fullWidth: true,
+            timeout: 10000,
+            animation: 'slideup'
+        });
     }
 })
