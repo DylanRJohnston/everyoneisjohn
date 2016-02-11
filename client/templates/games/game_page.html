@@ -15,10 +15,30 @@
                     </div>
                 </div>
             {{/if}}
+            {{#if showDifficultySetter}}
+                <h3>Pick difficulty for roll {{checkDifficulty}}.</h3>
+                {{> userPickNumber lower=1 upper=7}}
+            {{/if}}
+            {{#if showWillPicker}}
+                <h3>Difficulty: {{checkDifficulty}}. Pick willpower for {{rollName}}</h3>
+                {{> userPickNumber lower=0 upper=6}}
+            {{/if}}
+            {{#if showChallangePicker}}
+                <h3>Bet willpower to gain control of John.</h3>
+                {{> userPickNumber lower=0 upper=6}}
+            {{/if}}
         </div>
         {{#each players}}
             {{> player}}
         {{/each}}
         <a href="{{pathFor 'newPlayer'}}" class="btn btn-danger btn-fab"><i class="large material-icons">add</i></a>
+    </div>
+</template>
+
+<template name="userPickNumber">
+    <div class="btn-group btn-group-justified btn-group-raised">
+        {{#each range}}
+            <a href="" class="btn input-number">{{this}}</a>
+        {{/each}}
     </div>
 </template>

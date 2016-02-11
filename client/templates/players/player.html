@@ -2,7 +2,7 @@
     <div class="panel {{playerClass}}">
         <div class="panel-heading">
             <h3 class="panel-title">
-                {{name}}
+                {{name}} <span class="badge">{{willpower}}</span>
                 <div class="pull-right">
                     {{#if isJohn}}
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -24,8 +24,11 @@
 </template>
 
 <template name="obsessions">
-    Obsessions:
-    {{#each this}}
-        <span class="{{obsessionClass}}">{{description}}</span>
-    {{/each}}
+    <h4>
+        <b>Obsessions</b>
+        <hr/>
+        {{#each this}}
+            <p>({{level}}) {{description}}</p>
+        {{/each}}
+    </h4>
 </template>

@@ -24,7 +24,7 @@ Meteor.publish('allPlayers', function(gameId) {
         return;
     }
 
-    let projection = this.userId === Games.findOne({_id: gameId}).ownerId ? {} : {fields: {obsessions: 0}};
+    let projection = this.userId === Games.findOne({_id: gameId}).ownerId ? {} : {fields: {obsessions: 0, bet: 0}};
 
     return Players.find({gameId: gameId}, projection);
 });

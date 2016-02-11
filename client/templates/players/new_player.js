@@ -4,7 +4,6 @@ Template.newPlayer.onRendered(function(){
 
 AutoForm.hooks({
     insertPlayerForm: function() {
-        console.log(this);
         Router.go('gamePage', {_id: this.gameId});
     }
 })
