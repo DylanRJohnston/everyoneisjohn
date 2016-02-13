@@ -2,6 +2,10 @@
     color: white !important;
 }
 
+.dropdown-menu {
+    background-color: #3f51b5 !important;
+}
+
 #login-username {
     color: white !important;
 }
